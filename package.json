@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build": "NODE_ENV=production webpack",
+    "build:watch": "NODE_ENV=production webpack --watch",
     "start": "webpack --watch",
     "dev": "webpack-dev-server",
     "serve": "serve -p 3002",
+    "serve:watch": "concurrently \"npm run build:watch\" \"npm run serve\"",
     "clean": "rm -rf dist"
   },
   "repository": {
@@ -31,6 +33,7 @@
     "@types/node": "^17.0.35",
     "autoprefixer": "^10.4.7",
     "babel-loader": "^8.2.5",
+    "concurrently": "^7.2.0",
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
     "postcss": "^8.4.14",
